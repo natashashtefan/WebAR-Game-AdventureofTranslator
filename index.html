@@ -153,31 +153,31 @@
 
                 // Масив назв файлів .patt. Масив заповнюється в порядку додавання маркерів
                 // якщо замість .patt було додано баркод, на його місце в масив додається порожній рядок
-                const patternNames = ["" ,"" ,"" ,"" ,"" ,"","pattern-1-crossplatform.patt", "pattern-1-new-software.patt"];
+                const patternNames = ["" ,"" ,"" ,"" ,"" ,"","pattern-1-crossplatform.patt", "pattern-1-new-software.patt", "pattern-fishka-time.patt"];
                 // Масив баркодів, заповнюється одночасно з масивом патернів
                 // якщо замість баркоду був доданий .patt, на його місце масив додається -1
-                const patternBarcode = [1 ,2 ,3 ,4 ,5 ,6,-1,-1];
+                const patternBarcode = [1 ,2 ,3 ,4 ,5 ,6,-1,-1,-1];
                 // Масив типів контенту кожного маркера, заповнюється значеннями: зображення, модель, відео
-                const modes = ["image" ,"image" ,"image" ,"image" ,"image" ,"image","image","image"];
+                const modes = ["image" ,"image" ,"image" ,"image" ,"image" ,"image","image","image","model"];
                 // Масив файлів моделей, якщо немає моделі буде додано порожній рядок
-                const modelFiles = ["" ,"" ,"" ,"" ,"" ,"","",""];
+                const modelFiles = ["" ,"" ,"" ,"" ,"" ,"","","","","cartoon_christmas_bell.glb"];
                 // Масив файлів зображень, якщо немає зображення буде додано також порожній рядок
-                const imageFiles = ["10-tacts.png" ,"10-tacts.png" ,"15-tacts.png" ,"15-tacts.png" ,"20-tacts.png" ,"20-tacts.png","318073630_228077372908762_76559690146992933_n.jpg", "12.jpg"];
+                const imageFiles = ["10-tacts.png" ,"10-tacts.png" ,"15-tacts.png" ,"15-tacts.png" ,"20-tacts.png" ,"20-tacts.png","318073630_228077372908762_76559690146992933_n.jpg", "12.jpg",""];
                 // Масив файлів відео, якщо немає відео буде ще один порожній рядок
-                const videoFiles = ["" ,"" ,"" ,"" ,"" ,"","",""];
+                const videoFiles = ["" ,"" ,"" ,"" ,"" ,"","","",""];
                 // Масив файлів аудіо, якщо немає аудіо буде так само порожній рядок
-                const audioFiles = ["Short_project.m4a" ,"Short_project.m4a" ,"Mid_term_project.m4a" ,"Mid_term_project.m4a" ,"Long_project.m4a" ,"Long_project.m4a","",""];
+                const audioFiles = ["Short_project.m4a" ,"Short_project.m4a" ,"Mid_term_project.m4a" ,"Mid_term_project.m4a" ,"Long_project.m4a" ,"Long_project.m4a","","",""];
                 // Масив опцій повтору аудіо та відео контенту, по дефолту для всіх буде false
-                const repeatOptions = ["false" ,"false" ,"false" ,"false" ,"false" ,"false","false","false"];
+                const repeatOptions = ["false" ,"false" ,"false" ,"false" ,"false" ,"false","false","false","false"];
   
                 // Створюємо масив для всіх маркерів
                 const markerRoots = [];
-                for (let i = 0; i < 8; i++) {
+                for (let i = 0; i < 9; i++) {
                     markerRoots[i] = new THREE.Group();
                 }
   
                 // Проходимо по кожному маркеру з масиву і додаємо його в головний контейнер
-                for (let i = 0; i < 8; i++) {
+                for (let i = 0; i < 9; i++) {
                     mainContainer.add(markerRoots[i]);
 
                     // Якщо поточний маркер – це баркод, створюємо AR контролер під баркод
@@ -208,7 +208,8 @@
                                     // Іноді модель не можна побачити з кількох причин, найчастіше варто збільшити чи зменшити у 100 разів.
                                     // Читайте: https://threejs.org/docs/index.html#manual/en/introduction/Loading-3D-models
                                     // Тут ми зменшуємо її, щоб точно побачити її на сцені. Ви можете видалити цю шкалу, якщо потрібно
-                                    object.scale.set(0.01, 0.01, 0.01);
+                                   object.scale.set(0.13, 0.13, 0.13);
+
                                     // Ви можете самостійно змінити поворот або позицію моделі
                                     // object.position.set(0, Math.PI / 2, Math.PI / 4);
                                     // object.rotation.set(0, Math.PI / 2, Math.PI / 4);
