@@ -208,8 +208,11 @@
                                     // Іноді модель не можна побачити з кількох причин, найчастіше варто збільшити чи зменшити у 100 разів.
                                     // Читайте: https://threejs.org/docs/index.html#manual/en/introduction/Loading-3D-models
                                     // Тут ми зменшуємо її, щоб точно побачити її на сцені. Ви можете видалити цю шкалу, якщо потрібно
-                                   object.scale.set(0.13, 0.13, 0.13);  
-
+                                    // object.scale.set(0.13, 0.13, 0.13);  
+                                    switch (i) {
+				                         case 8: object.scale.set(0.13, 0.13, 0.13); break;
+				                    	 case 12: object.scale.set(0.5, 0.5, 0.5); break;	   
+    			                    }
                                     // Ви можете самостійно змінити поворот або позицію моделі
                                     // object.position.set(0, Math.PI / 2, Math.PI / 4);
                                     // object.rotation.set(0, Math.PI / 2, Math.PI / 4);
