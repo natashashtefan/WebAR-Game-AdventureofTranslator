@@ -156,29 +156,29 @@
 				      "pattern-fishka-time.patt","pattern-compil.patt" ,
 				      "pattern-interpr.patt" ,"pattern-transl.patt", 
 				      "pattern-fishka-finish.patt", 
-				      "", "", "", "", "", ""];
+				      "", "", "", "", "", "","pattern-1-upgrade.patt"];
                 		      
 		    // Масив баркодів, заповнюється одночасно з масивом патернів
                 // якщо замість баркоду був доданий .patt, на його місце масив додається -1
-                const patternBarcode = [1 ,2 ,3 ,4 ,5 ,6,-1,-1,-1,-1,-1,-1,-1,7,8,9,10,11,12];
+                const patternBarcode = [1 ,2 ,3 ,4 ,5 ,6,-1,-1,-1,-1,-1,-1,-1,7,8,9,10,11,12,-1];
                
 		    // Масив типів контенту кожного маркера, заповнюється значеннями: зображення, модель, відео
                 const modes = ["image" ,"image" ,"image" ,"image" ,"image" ,
 			       "image","image","image","model",
 			       "video","video" ,
 			       "image","model","image","image","image",
-			       "image","image","image"];
+			       "image","image","image","image"];
 		    
                 // Масив файлів моделей, якщо немає моделі буде додано порожній рядок
                 const modelFiles = ["" ,"" ,"" ,"" ,"" ,"","","",
 				    "cartoon_christmas_bell.glb",
-				    "","","","gift.glb","","","","","",""];
+				    "","","","gift.glb","","","","","","",""];
 		    
                 // Масив файлів зображень, якщо немає зображення буде додано також порожній рядок  
                 const imageFiles = ["cube.jpg" ,"cube.jpg" ,"cube.jpg" ,"cube.jpg" ,"cube.jpg" ,
 				    "cube.jpg","cube.jpg", "cube.jpg","",
 				    "compil_pict.jpg","compil_pict.jpg","compil_pict.jpg","","cube.jpg","cube.jpg",
-				    "cube.jpg","cube.jpg","cube.jpg","cube.jpg"];
+				    "cube.jpg","cube.jpg","cube.jpg","cube.jpg","cube.jpg"];
 		    
                 // Масив файлів відео, якщо немає відео буде ще один порожній рядок
                 const videoFiles = ["" ,"" ,"" ,"" ,"" ,"","","","","video_compiler.mp4","video_interpreter.mp4","","","","","","","",""];
@@ -187,22 +187,22 @@
 		const audioFiles = ["Short_project.m4a" ,"Short_project.m4a" ,"Mid_term_project.m4a" ,"Mid_term_project.m4a" ,
 				    "Long_project.m4a" ,"Long_project.m4a","crossplatform.m4a","new-software.m4a","","", "", "translate_select.m4a","",
 				    "cube_three_point_bonus.m4a", "cube_one_point_bonus.m4a", "cube_two_point_bonus.m4a",
-				    "cube_three_point_penalty.m4a", "cube_two_point_penalty.m4a", "cube_one_point_penalty.m4a"];
+				    "cube_three_point_penalty.m4a", "cube_two_point_penalty.m4a", "cube_one_point_penalty.m4a","upgrade.m4a"];
               
 		    // Масив опцій повтору аудіо та відео контенту, по дефолту для всіх буде false
                 const repeatOptions = ["false" ,"false" ,"false" ,"false" ,"false" ,
 				       "false","false","false","false","false",
 				       "false","false","false" ,"false","false",
-				       "false","false","false","false"];
+				       "false","false","false","false","false"];
   
                 // Створюємо масив для всіх маркерів
                 const markerRoots = [];
-                for (let i = 0; i <19; i++) {
+                for (let i = 0; i <20; i++) {
                     markerRoots[i] = new THREE.Group();
                 }
   
                 // Проходимо по кожному маркеру з масиву і додаємо його в головний контейнер
-                for (let i = 0; i < 19; i++) {
+                for (let i = 0; i < 20; i++) {
                     mainContainer.add(markerRoots[i]);
 
                     // Якщо поточний маркер – це баркод, створюємо AR контролер під баркод
